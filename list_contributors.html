@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="id00"></div>
+<div id="id01"></div>
+
+
+<script>
+var myArray = [
+  {
+    "nickname": "John Doe",
+    "team": "Support",
+    "contributions": 6
+  },
+  {
+    "nickname": "Private Gomer Pyle",
+    "team": "Admins",
+    "contributions": 4
+  },
+  {
+    "nickname": "John Kowalski",
+    "team": "LAC",
+    "contributions": 10
+  },
+  {
+    "nickname": "Forrest Gump",
+    "team": "LAC",
+    "contributions": 10
+  },
+  {
+    "nickname": "David Bowman",
+    "team": "Licstat",
+    "contributions": 5
+  },
+  {
+    "nickname": "Neo",
+    "team": "LM-X",
+    "contributions": 1
+  },
+  {
+    "nickname": "Han Solo",
+    "team": "Internal Systems",
+    "contributions": 4
+  },
+  {
+    "nickname": "Indiana Jones",
+    "team": "LM-X",
+    "contributions": 3
+  },
+  {
+    "nickname": "Edward Scissorhands",
+    "team": "Admins",
+    "contributions": 3
+  },
+  {
+    "nickname": "Tyler Durden",
+    "team": "Licstat",
+    "contributions": 7
+  }
+]  ;
+myFunction(myArray);
+function myFunction(arr) {
+    var out = "";
+    var i;
+    var array =[];
+	var print = "<p><br>Contributions in descending order:</p>";
+	
+    for(i = 0; i < arr.length; i++) {
+        out += arr[i].nickname + '<br>'; 
+		
+		array.push(arr[i].contributions);
+        //arr[i].display ;
+    }
+
+    array.sort(function(a,b){
+    return a-b //to reverse b.date-a.date
+    });
+	document.getElementById("id00").innerHTML = 'Contributions made by:<br><br>' + out;	
+	array.reverse();
+    for(i = 0; i < array.length; i++) {
+		print += array[i] + '<br>';
+    }
+    document.getElementById("id01").innerHTML = print;
+}
+</script>
+
+</body>
+</html>
